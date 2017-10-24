@@ -36,16 +36,11 @@ export class RecipeComponent implements OnDestroy, OnInit {
         private apiService: ApiService,
         private router: Router) { }
     /**
-     *
-     */
-    ngOnDestroy() {
-        this.routerSubscription && this.routerSubscription.unsubscribe();
-    }
-    /**
      * Gets the current recipe slug on init
      */
     ngOnInit() {
         this.routerSubscription = this.router.events.subscribe((event) => {
+            console.log('YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY');
             if (event instanceof NavigationEnd) {
                 const slug: string = this.activatedRoute.snapshot.params['slug'];
                 this.recipe = this.apiService.slugToRecipe(slug);
@@ -55,5 +50,11 @@ export class RecipeComponent implements OnDestroy, OnInit {
         this.apiService.latest.subscribe((recipe) => {
             console.log(recipe.image);
         });
+    }
+    /**
+     *
+     */
+    ngOnDestroy() {
+        this.routerSubscription && this.routerSubscription.unsubscribe();
     }
 }

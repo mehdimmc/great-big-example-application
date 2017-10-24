@@ -42,6 +42,7 @@ export class JhiMainComponent implements OnInit, AfterViewInit {
     ngOnInit() {
         this.router.events.subscribe((event) => {
             if (event instanceof NavigationEnd) {
+                console.log('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX');
                 this.jhiLanguageHelper.updateTitle(this.getPageTitle(this.router.routerState.snapshot.root));
             }
         });
