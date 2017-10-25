@@ -5,7 +5,7 @@
     <section class="primary-info">
         <h1 class="title">{{ (apiService.latest | async)?.title }}</h1>
         <div class="blurb">{{ (apiService.latest | async)?.blurb }}
-            <a *ngIf="apiService.latest | async" [routerLink]="['/recipe', (apiService.latest | async)?.slug]" appAxFocus01Fix>View&nbsp;Recipe</a>
+            <a *ngIf="apiService.latest | async" [routerLink]="['/meals/recipe', (apiService.latest | async)?.slug]" appAxFocus01Fix>View&nbsp;Recipe</a>
         </div>
         <c2c-labels (change)="wh.updateHeight()" [labels]="(apiService.latest | async)?.labels" label="Allergy free items for this recipe"></c2c-labels>
     </section>

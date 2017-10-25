@@ -34,7 +34,10 @@ export class RecipeComponent implements OnDestroy, OnInit {
     constructor(
         private activatedRoute: ActivatedRoute,
         private apiService: ApiService,
-        private router: Router) { }
+        private router: Router) {
+
+        console.log('constructing');
+    }
     /**
      * Gets the current recipe slug on init
      */
